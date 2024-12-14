@@ -1,11 +1,38 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video call application</title>  
+    <title>Video Calling App</title>
+    <link rel="stylesheet" href="/js/styles.css">
     <script src="/js/socket.io.js" defer></script>
+    <script src="/js/main.js" defer ></script>
 </head>
 <body>
-    <h1>Hey!</h1>
+    <div id="app-container" class="container">
+        <!-- Sidebar -->
+        <div id="sidebar" class="sidebar">
+            <h3>Participants</h3>
+            <ul id="participants-list" class="participants">
+                <li>John Doe</li>
+                <li>Jane Smith</li>
+                <li>Michael Lee</li>
+                <li>Emma Johnson</li>
+            </ul>
+        </div>
+        
+        <!-- Video Section -->
+        <div id="video-section" class="video-section">
+            <div id="local-video-container" class="video-container">
+                <video id="video1" class="video" autoplay muted playsinline></video>
+            </div id="remote-video-container" class="video-container">
+            <div>
+                <video id="video2" class="video" autoplay  muted playsinline></video>
+            </div>
+            <button id="toggle-button" class="toggle-button">
+                <img src="https://via.placeholder.com/30" alt="Button Image">
+            </button>
+        </div>
+    </div>
 </body>
 </html>
