@@ -13,6 +13,9 @@ app.use(express.static("public"));
 
 io.on("connection", (socket) => {
     console.log(`User with socked id ${socket.id} connected.  `)
+    socket.on("join-user" , (userName) => {
+        console.log(`${userName} joined the chat.`);
+    })
 });
 
 

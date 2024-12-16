@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Calling App</title>
-    <link rel="stylesheet" href="/js/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <script src="/js/socket.io.js" defer></script>
     <script src="/js/main.js" defer></script>
 </head>
@@ -25,11 +25,11 @@
         <div id="video-section" class="video-section">
             <!-- Username input and button -->
             <div class="username-section">
-                <form id="username-form" class="username-form">
+                <div id="username-form" class="username-form">
                     <label for="username" class="label">Username:</label>
                     <input type="text" id="username" name="username" class="input" placeholder="Enter your username" required>
-                    <button type="submit" class="button">Enter</button>
-                </form>
+                    <button id="create-new-user" type="click" class="button">Enter</button>
+                </div>
             </div>
 
             <!-- Video Containers -->
@@ -37,10 +37,10 @@
                 <video id="video1" class="video" autoplay muted playsinline></video>
             </div>
             <div id="remote-video-container" class="video-container">
-                <video id="video2" class="video" autoplay muted playsinline></video>
+                <video id="video2" class="video" autoplay playsinline></video>
             </div>
             <button id="toggle-button" class="toggle-button">
-                <img src="https://via.placeholder.com/30" alt="Button Image">
+                <img src="https://img.freepik.com/premium-vector/end-call_592324-24792.jpg?semt=ais_hybrid" alt="Button Image">
             </button>
         </div>
     </div>
