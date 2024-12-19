@@ -9,12 +9,18 @@ const server = createServer(app);
 const io = new Server(server);
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
+const allUsers = {};
+
 app.use(express.static("public"));
 
 io.on("connection", (socket) => {
     console.log(`User with socked id ${socket.id} connected.  `)
     socket.on("join-user" , (userName) => {
         console.log(`${userName} joined the chat.`);
+        allUsers[userName] =  {userName, userId: socket.id}; 
+        console.log(allUsers);
+        // emit an event to show others tht someone new joined.
+        io.emit("joined",  (allUsers));
     })
 });
 
