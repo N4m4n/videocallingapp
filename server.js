@@ -22,6 +22,22 @@ io.on("connection", (socket) => {
         // emit an event to show others tht someone new joined.
         io.emit("joined",  (allUsers));
     })
+    
+
+    socket.on("offer", offerData => {
+        console.log(offerData.from);
+        console.log(offerData.to);
+        console.log(offerData.offer);
+        io.to(allUsers[offerData.to].userId).emit("offer", offerData);
+    })
+
+    socket.on("answer", answerData => {
+        io.to(allUsers[answerData.from].userId).emit("answer", answerData); 
+    })
+
+    socket.on("icecandidate", candidate => {
+        socket.broadcast.emit("icecandidate", candidate);
+    })
 });
 
 
