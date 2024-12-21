@@ -4,6 +4,7 @@ const newUserName = document.getElementById("username");
 const newUserSection = document.querySelector(".username-section");
 const myVideo = document.getElementById("video1");
 const remoteVideo = document.getElementById("video2");
+remoteVideo.style.transform = 'scaleX(-1)';
 let localStream;
 const socket = io();
 
@@ -25,7 +26,7 @@ const PeerConnection = (function () {
         })
 
         // listen for streams from other people
-        peerConnection.onTrack = function (event) {
+        peerConnection.ontrack = function (event) {
             console.log("ontrach");
             remoteVideo.srcObject = event.streams[0];
         } 
